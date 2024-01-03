@@ -7,6 +7,7 @@ class Tenant:
         self.BASIC_URL = 'https://'+tenant_name+'.'+environment+'.nslhub.com'
         self._credentials = []
         self._admin_credentials = []
+        self._mcc_layout = []
         
     
     @property
@@ -27,6 +28,13 @@ class Tenant:
     def admin_credentials(self)->List[Credential]:
         return self._admin_credentials
 
+    @property
+    def mcc_layout_urls(self)->List[str]:
+        return self._mcc_layout
+    
+    def add_mcc_layout_url(self,url:str)->List[str]:
+        self._mcc_layout.append(url)
+        return self._mcc_layout
     
     
     
